@@ -1,11 +1,97 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Account {
+  id                String  @id
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  User              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model User {
+  id            String    @id
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  Account       Account[]
+}
+
+model button {
+  id          Int     @id @default(autoincrement())
+  title       String? @db.VarChar(500)
+  usage       String? @db.VarChar(500)
+  instruction String? @db.VarChar(500)
+  details     String? @db.VarChar(500)
+}
+
+model cta {
+  id          Int     @id @default(autoincrement())
+  ctatitle    String? @db.VarChar(500)
+  ctasubtitle String? @db.VarChar(500)
+}
+
+model datas {
+  id           Int     @id @default(autoincrement())
+  herotitle    String? @db.VarChar(255)
+  herosubtitle String? @db.VarChar(255)
+  herodescription String? @db.VarChar(255)
+}
+
+model dialog {
+  id          Int     @id @default(autoincrement())
+  title       String? @db.VarChar(500)
+  usage       String? @db.VarChar(500)
+  instruction String? @db.VarChar(500)
+  details     String? @db.VarChar(500)
+}
+
+model dropdown {
+  id       Int     @id @default(autoincrement())
+  
+  button   String? @db.VarChar(150)
+  input    String? @db.VarChar(100)
+  dialog   String? @db.VarChar(100)
+  dropdown String? @db.VarChar(100)
+  radio    String? @db.VarChar(100)
+}
+
+
+model footer {
+  id           Int     @id @default(autoincrement())
+  footerheader String? @db.VarChar(500)
+  footerlinks  String? @db.VarChar(500)
+}
+
+model input {
+  id          Int     @id @default(autoincrement())
+  title       String? @db.VarChar(500)
+  usage       String? @db.VarChar(500)
+  instruction String? @db.VarChar(500)
+  details     String? @db.VarChar(500)
+}
+
+model navbar {
+  id      Int     @id @default(autoincrement())
+  href    String? @db.VarChar(500)
+  content String? @db.VarChar(500)
 }

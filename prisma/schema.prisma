@@ -3,38 +3,12 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
+  directUrl    = env("DIRECT_URL")
+  relationMode = "prisma"
 }
 
-model Account {
-  id                String  @id
-  userId            String
-  type              String
-  provider          String
-  providerAccountId String
-  refresh_token     String?
-  access_token      String?
-  expires_at        Int?
-  token_type        String?
-  scope             String?
-  id_token          String?
-  session_state     String?
-  User              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@unique([provider, providerAccountId])
-}
-
-model User {
-  id            String    @id
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  password      String?
-  Account       Account[]
-}
 
 model button {
   id          Int     @id @default(autoincrement())
@@ -44,17 +18,11 @@ model button {
   details     String? @db.VarChar(500)
 }
 
-model cta {
-  id          Int     @id @default(autoincrement())
-  ctatitle    String? @db.VarChar(500)
-  ctasubtitle String? @db.VarChar(500)
-}
-
 model datas {
-  id           Int     @id @default(autoincrement())
-  herotitle    String? @db.VarChar(255)
-  herosubtitle String? @db.VarChar(255)
-  herodescription String? @db.VarChar(255)
+  id              Int     @id @default(autoincrement())
+  herotitle       String? @db.VarChar(500)
+  herosubtitle    String? @db.VarChar(500)
+  herodescription String? @db.VarChar(500)
 }
 
 model dialog {
@@ -67,14 +35,12 @@ model dialog {
 
 model dropdown {
   id       Int     @id @default(autoincrement())
-  
   button   String? @db.VarChar(150)
   input    String? @db.VarChar(100)
   dialog   String? @db.VarChar(100)
   dropdown String? @db.VarChar(100)
   radio    String? @db.VarChar(100)
 }
-
 
 model footer {
   id           Int     @id @default(autoincrement())

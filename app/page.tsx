@@ -1,12 +1,10 @@
 import React from 'react'
 import Hero from './_pages/Hero'
 import Navbar from './_pages/Navbar'
-
-
-
-const App = () => {
+const App =  async () => {
+await new Promise(resolve => setTimeout(resolve,3000))
   return (
-    <div className=''>
+    <div>
       
      <Navbar />
       <Hero />

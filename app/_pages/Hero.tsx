@@ -1,6 +1,8 @@
+
 import prisma from "@/lib/db";
 import { datas } from "@prisma/client";
 import Link from "next/link"
+
 
 interface Props{
     props : datas;
@@ -63,8 +65,10 @@ function HeroProps({props}:Props) {
 
 export default async function Hero(){
     const response = await prisma.datas.findMany();
-    return(
+    
+        return(
         <div>
+           
             <HeroProps props={response[0]} />
         </div>
     )

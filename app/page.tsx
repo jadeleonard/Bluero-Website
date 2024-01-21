@@ -6,7 +6,7 @@ import Navbar from './_pages/Navbar'
 
 const App = () => {
   return (
-    <div>
+    <div className=''>
       
      <Navbar />
       <Hero />

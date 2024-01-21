@@ -61,3 +61,4 @@ model navbar {
   href    String? @db.VarChar(500)
   content String? @db.VarChar(500)
 }
+

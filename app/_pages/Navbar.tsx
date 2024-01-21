@@ -12,7 +12,7 @@ interface Props {
 function NavbarProps({ Props }: Props) {
   return (
     <div className="flex items-center justify-between p-4 bg-zinc-200 shadow-md">
-      <p className="text-2xl font-bold mx-auto">Logo</p>
+      <Link className="text-2xl font-bold mx-auto" href={'/'}>Logo</Link>
       <ul className="hidden sm:inline-flex gap-4 mx-auto">
         {Props.map((item, index) => (
           <li key={index}>

@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayouts({children}:{children : React.ReactNode }) {
     return(
         <html lang="en">
-            <body>
+            <body className="bg-slate-900">
                
                 {children}
             </body>

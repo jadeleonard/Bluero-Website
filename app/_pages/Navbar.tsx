@@ -28,7 +28,7 @@ function NavbarProps({ Props }: Props) {
     
   <Input className="w-1/1" type="search" />
     <Button variant={'ghost'}><FaSearch /></Button>
-          
+     
 
                 
         </div>

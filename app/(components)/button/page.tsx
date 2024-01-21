@@ -28,6 +28,7 @@ function ButtonProps({Props}:props){
     )
 }
 export default async function ButtonPage(){
+    await new Promise(resolve => setTimeout(resolve,3000))
     const response = await prisma.button.findMany();
     return(
        <div>

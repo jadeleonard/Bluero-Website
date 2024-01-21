@@ -1,4 +1,3 @@
-
 import prisma from "@/lib/db";
 import { datas } from "@prisma/client";
 import Link from "next/link"

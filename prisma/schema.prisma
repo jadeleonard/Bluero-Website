@@ -9,7 +9,6 @@ datasource db {
   relationMode = "prisma"
 }
 
-
 model button {
   id          Int     @id @default(autoincrement())
   title       String? @db.VarChar(500)
@@ -63,24 +62,40 @@ model navbar {
 }
 
 model User {
-  id           Int              @id @default(autoincrement())
-  name         String?
-  email        String           @unique
-  
-  role         Role             @default(USER)
-  coinflips    Boolean[]
-  posts        Post[]
-  city         String
-  country      String
-  profile      ExtendedProfile?
-  pets         Json
+  id    Int     @id @default(autoincrement())
+  name  String?
+  email String  @unique
+
+  role      Role             @default(USER)
+  coinflips Boolean[]
+  posts     Post[]
+  city      String
+  country   String
+  profile   ExtendedProfile?
+  pets      Json
+}
+
+model Bio {
+  id         Int    @id @default(autoincrement())
+  name       String
+  lastName   String
+  address    String
+  city       String
+  experience String
+  education  String
+  expertise  String
+  awards     String
+  skills     String
+
+  ExtendedProfile   ExtendedProfile? @relation(fields: [extendedProfileId], references: [id])
+  extendedProfileId Int?
 }
 
 model ExtendedProfile {
-  id     Int     @id @default(autoincrement())
-  userId Int?    @unique
-  bio    String?
-  User   User?   @relation(fields: [userId], references: [id])
+  id     Int   @id @default(autoincrement())
+  userId Int?  @unique
+  bio    Bio[]
+  User   User? @relation(fields: [userId], references: [id])
 }
 
 model Post {

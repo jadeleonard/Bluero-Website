@@ -99,14 +99,16 @@ model ExtendedProfile {
 }
 
 model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  published Boolean @default(true)
-  author    User    @relation(fields: [authorId], references: [id])
-  authorId  Int
-  comments  Json
-  views     Int     @default(0)
-  likes     Int     @default(0)
+  id             Int     @id @default(autoincrement())
+  title          String
+  published      Boolean @default(true)
+  author         User    @relation(fields: [authorId], references: [id])
+  authorId       Int
+  interest       Json
+  views          Int     @default(0)
+  likes          Int     @default(0)
+  jobDescription String
+  price          String
 }
 
 enum Role {

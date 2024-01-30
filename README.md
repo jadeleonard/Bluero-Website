@@ -2,15 +2,14 @@
 
 Welcome to Bluero, a social networking website where users can connect, share, and interact with each other.
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## Powered by:
+- [Bluero Social Site](#bluero-social-site)
+  - [Powered by:](#powered-by)
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
 
 ## Introduction
 Bluero is designed to provide users with a platform to connect and share their experiences. Whether you're looking to make new friends, share your interests, or stay connected with existing ones, Bluero has you covered.

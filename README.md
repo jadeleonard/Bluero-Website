@@ -4,7 +4,7 @@ Welcome to Bluero, a social networking website where users can connect, share, a
 
 ## Powered by:
 - [Nextjs (main framework)](#Nextjs)
-  - [Clerk Js (authentication):](#http://clerk.com)
+  - [Clerk Js (authentication):](#ClerkJs)
   - [Introduction](#introduction)
   - [Features](#features)
   - [Getting Started](#getting-started)
@@ -14,13 +14,10 @@ Welcome to Bluero, a social networking website where users can connect, share, a
 ## Nextjs
 Nextjs is a full stack framework. It has SSR(service side rendering), and hotreload you can visit and pratice your skills visit https://nextjs.org
 
-## Features
+## ClerkJs
 - User Authentication: Secure sign-up and login functionality.
 - Profile Creation: Users can create and customize their profiles.
-- Friend Requests: Send and accept friend requests to connect with others.
-- News Feed: View and post updates on the news feed.
-- Messaging: Private messaging for one-on-one communication.
-- Notifications: Receive alerts for friend requests, messages, and more.
+Visit their official https://clerk.com
 
 ## Getting Started
 To get started with Bluero, follow the steps below:

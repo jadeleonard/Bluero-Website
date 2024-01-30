@@ -3,7 +3,7 @@
 Welcome to Bluero, a social networking website where users can connect, share, and interact with each other.
 
 ## Powered by:
-- [Nextjs (main framework)](#https://nextjs.org)
+- [Nextjs (main framework)](#Nextjs)
   - [Clerk Js (authentication):](#http://clerk.com)
   - [Introduction](#introduction)
   - [Features](#features)
@@ -11,7 +11,7 @@ Welcome to Bluero, a social networking website where users can connect, share, a
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
 
-## Introduction
+## Nextjs
 Bluero is designed to provide users with a platform to connect and share their experiences. Whether you're looking to make new friends, share your interests, or stay connected with existing ones, Bluero has you covered.
 
 ## Features

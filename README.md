@@ -3,8 +3,8 @@
 Welcome to Bluero, a social networking website where users can connect, share, and interact with each other.
 
 ## Powered by:
-- [Bluero Social Site](#bluero-social-site)
-  - [Powered by:](#powered-by)
+- [Nextjs (main framework)](#https://nextjs.org)
+  - [Clerk Js (authentication):](#http://clerk.com)
   - [Introduction](#introduction)
   - [Features](#features)
   - [Getting Started](#getting-started)

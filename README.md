@@ -12,7 +12,7 @@ Welcome to Bluero, a social networking website where users can connect, share, a
     - [Installation](#installation)
 
 ## Nextjs
-Bluero is designed to provide users with a platform to connect and share their experiences. Whether you're looking to make new friends, share your interests, or stay connected with existing ones, Bluero has you covered.
+Nextjs is a full stack framework. It has SSR(service side rendering), and hotreload you can visit and pratice your skills visit https://nextjs.org
 
 ## Features
 - User Authentication: Secure sign-up and login functionality.

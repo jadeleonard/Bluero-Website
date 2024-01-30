@@ -2,10 +2,12 @@
 
 Welcome to Bluero, a social networking website where users can connect, share, and interact with each other.
 
+
+
 ## Powered by:
 - [Nextjs (main framework)](#Nextjs)
   - [Clerk Js (authentication):](#ClerkJs)
-  - [Introduction](#introduction)
+  - [Neon DB](#Neon DB)
   - [Features](#features)
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
@@ -19,8 +21,9 @@ Nextjs is a full stack framework. It has SSR(service side rendering), and hotrel
 - Profile Creation: Users can create and customize their profiles.
 Visit their official https://clerk.com
 
-## Getting Started
-To get started with Bluero, follow the steps below:
+## Neon DB
+Full back end support using postgres properties and features.
+You can visit thier official website here https://console.neon.tech here
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) installed

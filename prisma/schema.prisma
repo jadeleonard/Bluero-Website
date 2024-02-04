@@ -9,106 +9,54 @@ datasource db {
   relationMode = "prisma"
 }
 
-model button {
-  id          Int     @id @default(autoincrement())
-  title       String? @db.VarChar(500)
-  usage       String? @db.VarChar(500)
-  instruction String? @db.VarChar(500)
-  details     String? @db.VarChar(500)
-}
-
-model datas {
-  id              Int     @id @default(autoincrement())
-  herotitle       String? @db.VarChar(500)
-  herosubtitle    String? @db.VarChar(500)
-  herodescription String? @db.VarChar(500)
-}
-
-model dialog {
-  id          Int     @id @default(autoincrement())
-  title       String? @db.VarChar(500)
-  usage       String? @db.VarChar(500)
-  instruction String? @db.VarChar(500)
-  details     String? @db.VarChar(500)
-}
-
-model dropdown {
-  id       Int     @id @default(autoincrement())
-  button   String? @db.VarChar(150)
-  input    String? @db.VarChar(100)
-  dialog   String? @db.VarChar(100)
-  dropdown String? @db.VarChar(100)
-  radio    String? @db.VarChar(100)
-}
-
-model footer {
-  id           Int     @id @default(autoincrement())
-  footerheader String? @db.VarChar(500)
-  footerlinks  String? @db.VarChar(500)
-}
-
-model input {
-  id          Int     @id @default(autoincrement())
-  title       String? @db.VarChar(500)
-  usage       String? @db.VarChar(500)
-  instruction String? @db.VarChar(500)
-  details     String? @db.VarChar(500)
-}
-
-model navbar {
-  id      Int     @id @default(autoincrement())
-  href    String? @db.VarChar(500)
-  content String? @db.VarChar(500)
-}
-
-model User {
-  id    Int     @id @default(autoincrement())
-  name  String?
-  email String  @unique
-
-  role      Role             @default(USER)
-  coinflips Boolean[]
-  posts     Post[]
-  city      String
-  country   String
-  profile   ExtendedProfile?
-  pets      Json
-}
-
 model Bio {
-  id         Int    @id @default(autoincrement())
-  name       String
-  lastName   String
-  address    String
-  city       String
-  experience String
-  education  String
-  expertise  String
-  awards     String
-  skills     String
-
-  ExtendedProfile   ExtendedProfile? @relation(fields: [extendedProfileId], references: [id])
+  id                Int    @id @default(autoincrement())
+  name              String
+  lastName          String
+  address           String
+  city              String
+  experience        String
+  education         String
+  expertise         String
+  awards            String
+  skills            String
   extendedProfileId Int?
 }
 
 model ExtendedProfile {
-  id     Int   @id @default(autoincrement())
-  userId Int?  @unique
-  bio    Bio[]
-  User   User? @relation(fields: [userId], references: [id])
+  id     Int  @id @default(autoincrement())
+  userId Int? @unique
 }
 
 model Post {
   id             Int     @id @default(autoincrement())
   title          String
   published      Boolean @default(true)
-  author         User    @relation(fields: [authorId], references: [id])
   authorId       Int
-  interest       Json
   views          Int     @default(0)
   likes          Int     @default(0)
+  interest       Json
   jobDescription String
   price          String
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  name      String?
+  email     String    @unique
+  role      Role      @default(USER)
+  coinflips Boolean[]
+  city      String
+  country   String
+  pets      Json
+}
+
+
+
+model navbar {
+  id      Int     @id @default(autoincrement())
+  href    String? @db.VarChar(500)
+  content String? @db.VarChar(500)
 }
 
 enum Role {

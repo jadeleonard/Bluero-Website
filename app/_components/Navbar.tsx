@@ -1,56 +1,37 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import prisma from "@/lib/db";
-import { navbar } from "@prisma/client";
-import Link from "next/link";
-import { FaSearch } from "react-icons/fa";
-import Content from "./Content";
-
-import { SignUpButton } from "@clerk/nextjs";
-
-
-
-
-
-interface Props {
-  Props: navbar[];
+import Link from 'next/link'
+import React from 'react'
+import prisma from '@/lib/db'
+import { navbar } from '@prisma/client'
+type props ={
+    Props:navbar[];
 }
 
 
-function NavbarProps({ Props }: Props) {
-
-  return (
-    <div className="flex items-center justify-between p-4 bg-zinc-200 shadow-md">
-      <Link className="text-2xl font-bold mx-auto" href={'/'}>Logo</Link>
-      <ul className="hidden sm:inline-flex gap-4 mx-auto">
-        {Props.map((item, index) => (
-          <li key={index}>
-            {item.href ? (
-              <Link href={item.href}>{item.content}</Link>
-            ) : (
-              <span>{item.content}</span>
-            )}
-          </li>
-        ))}
-      </ul>
-      <div className=" inline-flex">
-              
-  <Input className="w-1/1" type="search"  />
-    <SignUpButton afterSignUpUrl="/"/>
-     
-
-                
+function NavbarProps({Props}:props){
+    return(
+        <div className='flex items-center justify-between p-4'>
+            <div className='text-2xl mx-auto'>
+                <Link href={'/'}  >Logo</Link>
+            </div>
+            <ul className='hidden sm:inline-flex gap-4 mx-auto'>
+            {Props.map((items) =>(
+                <li key={items.id}><Link href={items.href}>{items.section}</Link></li>
+            ))}
+            </ul>
         </div>
-
-    </div>
-  );
+    )
 }
+const Navbar = async () => {
+    const data = await prisma.navbar.findMany();
 
-export default async function Navbar() {
-  const response = await prisma.navbar.findMany();
+
+
+
   return (
     <div>
-      <NavbarProps Props={response} />
+        <NavbarProps Props={data} />
     </div>
-  );
+  )
 }
+
+export default Navbar
